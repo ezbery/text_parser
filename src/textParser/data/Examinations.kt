@@ -5,9 +5,11 @@ data class Examinations(
     val examinations: List<Examination>
 ) {
     constructor(input: List<Pair<String, String>>) : this(
-        examinations = input.map {
-            Examination(it)
-        }
+        examinations = input
+            .map {
+                Examination(it)
+            }
+            .sortedBy { it.type }
     )
 
     override fun toString(): String {
