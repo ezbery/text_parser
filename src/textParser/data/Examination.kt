@@ -14,6 +14,10 @@ data class Examination(
         TYPE2,
         OTHER
     }
+
+    override fun toString(): String {
+        return "$data;"
+    }
 }
 
 fun String.toType(): Examination.ValueType {
