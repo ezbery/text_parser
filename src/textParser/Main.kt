@@ -9,4 +9,5 @@ fun main(args: Array<String>) {
     Utils.saveFile("test.txt", "test")
 
     val results = Utils.readFile("sampleData.txt")
+        .map { Utils.prepareString(it) }
 }
