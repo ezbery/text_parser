@@ -23,8 +23,11 @@ object Utils {
         return lineList
     }
 
-    fun prepareString(input: String): Pair<String, String> {
-        val data = input.split(":")
-        return Pair(data[0], data[1].dropLast(1))
+    fun prepareData(input: String): Pair<String, String> {
+        val line = input.split(":")
+        val data = line[1]
+            .replace(" ", "")
+            .replace(";", "")
+        return Pair(line[0], data)
     }
 }

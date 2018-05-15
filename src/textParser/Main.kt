@@ -8,9 +8,9 @@ class Main
 fun main(args: Array<String>) {
     print("Test")
 
-    val inputFile = Utils.readFile("sampleData.txt")
-        .map { Utils.prepareString(it) }
-    val outputFile = Examinations(inputFile)
-
-    Utils.saveFile("test.txt", outputFile.toString())
+    val data = Examinations(
+        Utils.readFile("sampleData.txt")
+            .map { Utils.prepareData(it) }
+    )
+    Utils.saveFile("test.txt", data.toString())
 }
