@@ -23,6 +23,10 @@ object Utils {
         return lineList
     }
 
+    fun getData(input: String, regex: Regex): String? {
+        return if (input.matches(regex)) input else null
+    }
+
     fun prepareData(input: String): Pair<String, String> {
         val line = input.split(":")
         val data = line[1]
